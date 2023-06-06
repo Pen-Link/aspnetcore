@@ -1,6 +1,7 @@
 ﻿// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System.Text;
 using Microsoft.Extensions.Primitives;
 
 namespace Microsoft.AspNetCore.Mvc.Razor.Internal
@@ -23,7 +24,7 @@ namespace Microsoft.AspNetCore.Mvc.Razor.Internal
                 length++;
             }
 
-            var builder = new InplaceStringBuilder(length);
+            var builder = new StringBuilder(length);
             if (addLeadingSlash)
             {
                 builder.Append('/');

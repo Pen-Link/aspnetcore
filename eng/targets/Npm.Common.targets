@@ -15,7 +15,7 @@
   <Target Name="Restore">
     <Message Importance="High" Text="Running npm install on $(MSBuildProjectFullPath)" />
     <Exec Command="npm ci" Condition="'$(CI)' == 'true'" />
-    <Exec Command="npm install --no-optional" Condition="'$(CI)' != 'true'" />
+    <Exec Command="npm install --omit=optional" Condition="'$(CI)' != 'true'" />
   </Target>
 
   <Target Name="PrepareForBuild">
